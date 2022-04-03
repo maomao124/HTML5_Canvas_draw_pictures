@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<!--
+Project name(项目名称)：HTML5_Canvas_draw_pictures
+  File name(文件名): test1
+  Authors(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/4/3
+  Time(创建时间)： 21:22
+  Description(描述)： 无
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid springgreen;
+        }
+    </style>
+
+</head>
+<body>
+
+<canvas id="canvas" width="1400" height="900">
+    浏览器不支持画布功能
+</canvas>
+
+<script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    var img = new Image()
+    img.src = "photo.png"
+    img.onload = function ()
+    {
+        //  sx – 要绘制到目标上下文中的源image子矩形左上角的 x 轴坐标。请注意，此参数不包含在 3 或 5 参数语法中。
+        // sy – 要绘制到目标上下文中的源image子矩形左上角的 y 轴坐标。请注意，此参数不包含在 3 或 5 参数语法中。
+        // sWidth – 要绘制到目标上下文中的源image的子矩形的宽度。如果未指定，则使用从sx和sy指定的坐标到图像右下角的整个矩形。
+        //      请注意，此参数不包含在 3 或 5 参数语法中。
+        // sHeight - 源image的子矩形的高度，以绘制到目标上下文中。请注意，此参数不包含在 3 或 5 参数语法中。
+        // dx – 目标画布中放置源image左上角的 x 轴坐标。
+        // dy – 目标画布中放置源image左上角的 y 轴坐标。
+        // dWidth – 在目标画布中绘制image的宽度。这允许缩放绘制的图像。如果未指定，则图像在绘制时不会按宽度缩放。请注意，此参数不包含在 3 参数语法中。
+        // dHeight – 在目标画布中绘制image的高度。这允许缩放绘制的图像。如果未指定，则图像在绘制时不会按高度缩放。请注意，此参数不包含在 3 参数语法中。
+        ctx.drawImage(img, 20, 20, 300, 300);
+    }
+
+</script>
+
+</body>
+</html>
